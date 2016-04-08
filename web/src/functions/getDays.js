@@ -27,12 +27,12 @@ export const getDays = function(date) {
             }
         }
 
-        data.push([
-            i + 1,
-            moment(date, 'MM/DD/YYYY').add(i + 1, 'days').format('MM/DD/YYYY'),
-            weekNumber,
-            currentMonth
-        ]);
+        data.push({
+            fiscal_day: i + 1,
+            date: moment(date, 'MM/DD/YYYY').add(i + 1, 'days').format('MM/DD/YYYY'),
+            fiscal_week: weekNumber,
+            fiscal_month: currentMonth
+        });
 
         daysRemaining--;
         if (daysRemaining === 0) {
