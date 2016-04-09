@@ -1,5 +1,3 @@
-var moment = require('./moment.js');
-
 export const getDays = function(date) {
     var pattern = "445";
     var repeated = pattern.repeat(4);

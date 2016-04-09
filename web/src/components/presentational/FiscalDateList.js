@@ -1,16 +1,19 @@
 import { FiscalDateEntry } from './FiscalDateEntry.js';
 
-export const FiscalDateList = {
-    var entries = this.props.entries.map(function(entry) {
-        return <FiscalDateEntry
-            date = entry.date
-            fiscal_day = entry.fiscal_day
-            fiscal_week = entry.fiscal_week
-            fiscal_month = entry.fiscal_month
-            />
-    }, this);
+export const FiscalDateList = React.createClass({
     render: function() {
-        function() {
+        var entries = this.props.entries.map(function(entry) {
+            return (
+                <FiscalDateEntry
+                    date = { entry.date }
+                    fiscal_day = { entry.fiscal_day }
+                    fiscal_week = { entry.fiscal_week }
+                    fiscal_month = { entry.fiscal_month }
+                    key = { entry.fiscal_day }
+                />
+            );
+        }, this);
+        return (
             <table>
                 <thead>
                     <tr>
@@ -28,6 +31,6 @@ export const FiscalDateList = {
                     { entries }
                 </tbody>
             </table>
-        }
+        );
     }
-}
+});
