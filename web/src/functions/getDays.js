@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const getDays = function(date) {
     var pattern = "445";
     var repeated = pattern.repeat(4);
@@ -25,11 +27,16 @@ export const getDays = function(date) {
             }
         }
 
+        var current_date = moment(date, 'MM/DD/YYYY').add(i + 1, 'days');
         data.push({
+            day: current_date.format('D'),
+            month: current_date.format('M'),
+            year: current_date.format('YYYY'),
+            date: current_date.format('MM/DD/YYYY'),
             fiscal_day: i + 1,
-            date: moment(date, 'MM/DD/YYYY').add(i + 1, 'days').format('MM/DD/YYYY'),
             fiscal_week: weekNumber,
-            fiscal_month: currentMonth
+            fiscal_month: currentMonth,
+            fiscal_year: moment(date, 'MM/DD/YYYY').format('YYYY')
         });
 
         daysRemaining--;

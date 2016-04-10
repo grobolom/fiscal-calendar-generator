@@ -1,13 +1,13 @@
 export const FiscalDateEntry = React.createClass({
     render: function() {
+        var day = this.props.day;
+        var month = this.props.month;
+        var year = this.props.year;
         var date = this.props.date;
         var fiscal_day = this.props.fiscal_day;
         var fiscal_week = this.props.fiscal_week;
         var fiscal_month = this.props.fiscal_month;
-        var day = '1';
-        var month = '1';
-        var year = '1';
-        var fiscal_year = '1';
+        var fiscal_year = this.props.fiscal_year;
         return (
             <tr>
                 <td>{ day }</td>

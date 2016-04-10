@@ -1,3 +1,4 @@
+import React from 'react';
 import { FiscalDateEntry } from './FiscalDateEntry.js';
 
 export const FiscalDateList = React.createClass({
@@ -5,16 +6,20 @@ export const FiscalDateList = React.createClass({
         var entries = this.props.entries.map(function(entry) {
             return (
                 <FiscalDateEntry
+                    day = { entry.day }
+                    month = { entry.month }
+                    year = { entry.year }
                     date = { entry.date }
                     fiscal_day = { entry.fiscal_day }
                     fiscal_week = { entry.fiscal_week }
                     fiscal_month = { entry.fiscal_month }
+                    fiscal_year = { entry.fiscal_year }
                     key = { entry.fiscal_day }
                 />
             );
         }, this);
         return (
-            <table>
+            <table className='u-full-width'>
                 <thead>
                     <tr>
                         <th>Day</th>
