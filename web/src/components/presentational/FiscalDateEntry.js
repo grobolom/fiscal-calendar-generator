@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const FiscalDateEntry = React.createClass({
     render: function() {
         var day = this.props.day;

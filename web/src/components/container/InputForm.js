@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { WeekFormat } from '../presentational/WeekFormat.js';
 import { FiscalYearStart } from '../presentational/FiscalYearStart.js';
 import { GenerateButton } from '../presentational/GenerateButton.js';

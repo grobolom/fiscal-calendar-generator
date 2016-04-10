@@ -1,3 +1,6 @@
+import { render } from 'react-dom';
+import React from 'react';
+
 import { FiscalDateList } from './components/presentational/FiscalDateList.js';
 import { InputForm } from './components/container/InputForm.js';
 import { getDays } from './functions/getDays.js';
@@ -10,7 +13,7 @@ var store = {
     }
 };
 
-ReactDOM.render(
+render(
     <div>
         <h1>Fiscal Calendar Generator</h1>
         <div className='twelve columns'>

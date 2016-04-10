@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const GenerateButton = React.createClass({
     render: function() {
         return (
