@@ -5,11 +5,11 @@ import { GenerateButton } from './GenerateButton.js';
 export const InputForm = React.createClass({
     render: function() {
         return (
-            <div>
+            <form>
                 <WeekFormat />
                 <FiscalYearStart />
                 <GenerateButton />
-            </div>
+            </form>
         );
     }
 });

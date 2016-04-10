@@ -5,15 +5,16 @@ import { getDays } from './functions/getDays.js';
 var data = getDays('01/01/2016');
 
 ReactDOM.render(
-    <FiscalDateList
-        entries={ data }
-    />,
-    document.getElementById('table')
-);
-
-ReactDOM.render(
-    <InputForm
-        entries={ data }
-    />,
-    document.getElementById('input-form')
+    <div>
+        <h1>Fiscal Calendar Generator</h1>
+        <div className='twelve columns'>
+            <InputForm />
+        </div>
+        <div className='twelve columns'>
+            <FiscalDateList
+                entries = { data }
+            />
+        </div>
+    </div>,
+    document.getElementById('main')
 );
