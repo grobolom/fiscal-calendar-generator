@@ -1,4 +1,4 @@
-import 'getDays' from '../functions/getDays.js';
+import { getDays } from '../functions/getDays.js';
 
 export const rootReducer = function (state, action) {
     switch (action.type) {
