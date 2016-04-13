@@ -3,7 +3,11 @@ import { FiscalDateEntry } from './FiscalDateEntry.js';
 
 export const FiscalDateList = React.createClass({
     render: function() {
-        var entries = this.props.entries.map(function(entry) {
+        var entries = this.props.entries
+            .filter(function(entry) {
+                return (entry.fiscal_day < 10 || entry.fiscal_day > 360);
+            })
+            .map(function(entry) {
             return (
                 <FiscalDateEntry
                     day = { entry.day }
