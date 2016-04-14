@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { DownloadButton } from './DownloadButton.js';
 import { WeekFormat } from '../presentational/WeekFormat.js';
 import { FiscalYearStart } from '../presentational/FiscalYearStart.js';
 import { GenerateButton } from '../presentational/GenerateButton.js';
@@ -18,6 +19,7 @@ export const InputForm = React.createClass({
                 <WeekFormat />
                 <FiscalYearStart />
                 <GenerateButton />
+                <DownloadButton />
             </form>
         );
     }
