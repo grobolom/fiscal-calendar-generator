@@ -4,6 +4,12 @@ export const generate = function() {
     };
 }
 
+export const download = function() {
+    return {
+        type: 'DOWNLOAD',
+    };
+}
+
 export const setPattern = function(pattern) {
     return {
         type: 'SET_PATTERN',
