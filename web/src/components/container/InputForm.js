@@ -9,17 +9,25 @@ import { generate } from '../../actions/index.js';
 export const InputForm = React.createClass({
     handleSubmit: function(e) {
         e.preventDefault();
-        this.props.store.dispatch(generate('445', '04/01/2016'));
+        this.props.store.dispatch(generate());
     },
     render: function() {
         return (
             <form
                 onSubmit = { this.handleSubmit }
             >
-                <WeekFormat />
-                <FiscalYearStart />
-                <GenerateButton />
-                <DownloadButton />
+                <WeekFormat
+                    store = { this.props.store }
+                />
+                <FiscalYearStart
+                    store = { this.props.store }
+                />
+                <GenerateButton
+                    store = { this.props.store }
+                />
+                <DownloadButton
+                    store = { this.props.store }
+                />
             </form>
         );
     }
