@@ -1,7 +1,6 @@
 import moment from 'moment';
 
-export const getDays = function(date) {
-    var pattern = "445";
+export const getDays = function(pattern, date) {
     var repeated = pattern.repeat(4);
     var p = repeated.split('');
 
@@ -17,6 +16,7 @@ export const getDays = function(date) {
     var weekNumber = 1;
     var monthNumber = 1;
     var data = [];
+    var parsed_date = moment(date, 'YYYY-MM-DD');
     for (var i = 0; i < 364; i++) {
         var currentMonth = 1;
         for (var j = 0; j < 12; j++) {
@@ -27,7 +27,8 @@ export const getDays = function(date) {
             }
         }
 
-        var current_date = moment(date, 'MM/DD/YYYY').add(i + 1, 'days');
+        // since this isn't immutable we have to only add one day each time
+        var current_date = parsed_date.add(1, 'days');
         data.push({
             day: current_date.format('D'),
             month: current_date.format('M'),
@@ -36,7 +37,7 @@ export const getDays = function(date) {
             fiscal_day: i + 1,
             fiscal_week: weekNumber,
             fiscal_month: currentMonth,
-            fiscal_year: moment(date, 'MM/DD/YYYY').format('YYYY')
+            fiscal_year: parsed_date.format('YYYY')
         });
 
         daysRemaining--;

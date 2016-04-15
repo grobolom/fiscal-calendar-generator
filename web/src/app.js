@@ -7,8 +7,12 @@ import { getDays } from './functions/getDays.js';
 import { createStore } from './store.js';
 import { rootReducer } from './reducers/root.js';
 
-var data = getDays('01/01/2016');
-var store = createStore(rootReducer, { entries: data });
+var initialState = {
+    pattern: '445',
+    start_date: '2016-02-01',
+    entries: getDays('445', '2016-02-01')
+};
+var store = createStore(rootReducer, initialState);
 
 var ren = function () {
     render(
