@@ -4,7 +4,7 @@
   "description": "",
   "main": "web/js/app.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive",
+    "test": "mocha --compilers js:babel-core/register --recursive"
   },
   "author": "vasja volin",
   "license": "ISC",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "babel-register": "^6.7.2",
+    "expect": "^1.16.0",
     "mocha": "^2.4.5"
   }
 }
