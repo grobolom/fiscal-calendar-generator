@@ -27,13 +27,12 @@ export const getDays = function(pattern, date) {
             }
         }
 
-        // since this isn't immutable we have to only add one day each time
-        var current_date = parsed_date.add(1, 'days');
+        var current_date = parsed_date;
         data.push({
             day: current_date.format('D'),
             month: current_date.format('M'),
             year: current_date.format('YYYY'),
-            date: current_date.format('MM/DD/YYYY'),
+            date: current_date.format('YYYY-MM-DD'),
             fiscal_day: i + 1,
             fiscal_week: weekNumber,
             fiscal_month: currentMonth,
@@ -45,6 +44,9 @@ export const getDays = function(pattern, date) {
             daysRemaining = weekDaysMax;
             weekNumber++;
         }
+
+        // since this isn't immutable we have to only add one day each time
+        parsed_date.add(1, 'days');
     }
     return data;
 }
