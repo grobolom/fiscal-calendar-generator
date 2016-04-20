@@ -29,4 +29,8 @@ describe('getDays', function() {
     it('should start with the provided date', function() {
         expect(getDays('445', '2016-01-01')[0].date).toEqual('2016-01-01');
     });
+
+    it('should return an empty array when given a bad pattern', function() {
+        expect(getDays('444', '2016-01-01')).toEqual([]);
+    });
 });

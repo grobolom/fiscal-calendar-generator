@@ -4,6 +4,14 @@ export const getDays = function(pattern, date) {
     var repeated = pattern.repeat(4);
     var p = repeated.split('');
 
+    var sum = p.reduce(function(previous, current) {
+        return previous + parseInt(current);
+    }, 0);
+
+    if (sum != 52) {
+        return [];
+    }
+
     var months = [];
     var weeksSoFar = 0;
     p.forEach(function(current, index) {
