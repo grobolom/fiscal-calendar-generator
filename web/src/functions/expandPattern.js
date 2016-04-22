@@ -1,3 +1,11 @@
 export const expandPattern = function(pattern) {
-    return [4,5,4,4,5,4,4,5,4,4,5,4];
+    if (pattern.length != 3 && pattern.length != 12)
+        throw new Error('invalid length');
+
+    if (pattern.length == 3)
+        pattern = pattern.repeat(4);
+
+    return pattern.split('').map(function(current) {
+        return parseInt(current);
+    });
 };
