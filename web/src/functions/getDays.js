@@ -1,16 +1,11 @@
 import moment from 'moment';
+import { expandPattern } from './expandPattern.js'
+import { validatePattern } from './validatePattern.js'
 
 export const getDays = function(pattern, date) {
-    var repeated = pattern.repeat(4);
-    var p = repeated.split('');
-
-    var sum = p.reduce(function(previous, current) {
-        return previous + parseInt(current);
-    }, 0);
-
-    if (sum != 52) {
+    var p = expandPattern(pattern);
+    if (!validatePattern(p))
         return [];
-    }
 
     var months = [];
     var weeksSoFar = 0;
