@@ -1,5 +1,6 @@
 import { render } from 'react-dom';
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import { FiscalDateList } from './components/presentational/FiscalDateList.js';
 import { InputForm } from './components/container/InputForm.js';
@@ -19,9 +20,9 @@ var ren = function () {
         <div>
             <h1>Fiscal Calendar Generator</h1>
             <div className='twelve columns'>
-                <InputForm
-                    store = { store }
-                />
+                <Provider store={ store }>
+                    <InputForm />
+                </Provider>
             </div>
             <div className='twelve columns'>
                 <FiscalDateList
