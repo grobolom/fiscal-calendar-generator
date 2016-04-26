@@ -8,6 +8,7 @@ export const GenerateButton = React.createClass({
                 value='generate'
                 name='generate'
                 className='button-primary'
+                onClick={ this.props.handleClick }
             />
         );
     }

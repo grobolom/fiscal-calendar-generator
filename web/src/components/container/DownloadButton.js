@@ -1,9 +1,11 @@
 import React from 'react';
 import { download } from '../../actions/index.js';
+import { GenerateButton } from '../presentational/GenerateButton.js';
 
 export const DownloadButton = React.createClass({
     handleClick: function() {
-        this.props.store.dispatch(download());
+        const { store } = this.context;
+        store.dispatch(download());
     },
     render: function() {
         return (
