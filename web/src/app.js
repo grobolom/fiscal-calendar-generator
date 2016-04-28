@@ -21,7 +21,9 @@ var ren = function () {
             <h1>Fiscal Calendar Generator</h1>
             <div className='twelve columns'>
                 <Provider store={ store }>
-                    <InputForm />
+                    <InputForm
+                        store = { store }
+                    />
                 </Provider>
             </div>
             <div className='twelve columns'>

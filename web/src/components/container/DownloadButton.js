@@ -4,8 +4,7 @@ import { GenerateButton } from '../presentational/GenerateButton.js';
 
 export const DownloadButton = React.createClass({
     handleClick: function() {
-        const { store } = this.context;
-        store.dispatch(download());
+        this.props.store.dispatch(download());
     },
     render: function() {
         return (
