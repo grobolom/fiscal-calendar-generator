@@ -2,7 +2,7 @@ var applyMiddleware = function (store, middlewares) {
     middlewares = middlewares.slice();
     middlewares.reverse();
 
-    var dispatch = store.dispatch;
+    let dispatch = store.dispatch;
     middlewares.forEach(function (middleware) {
         return dispatch = middleware(store)(dispatch);
     });

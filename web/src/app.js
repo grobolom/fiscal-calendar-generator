@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { FiscalDateList } from './components/presentational/FiscalDateList.js';
 import { InputForm } from './components/container/InputForm.js';
 import { getDays } from './functions/getDays.js';
-import { createStore } from './store.js';
+import { clipboardMiddleware } from  './middlewares/clipboardMiddleware.js';
+import { createStore, applyMiddleware } from './store.js';
 import { rootReducer } from './reducers/root.js';
 
 var initialState = {
@@ -14,6 +15,7 @@ var initialState = {
     entries: getDays('445', '2016-02-01')
 };
 var store = createStore(rootReducer, initialState);
+var store = applyMiddleware(store, [ clipboardMiddleware ]);
 
 var ren = function () {
     render(
