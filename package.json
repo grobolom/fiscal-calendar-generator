@@ -18,7 +18,8 @@
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "clipboard": "~1.5.10"
   },
   "devDependencies": {
     "babel-register": "^6.7.2",
