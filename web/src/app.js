@@ -21,7 +21,11 @@ var ren = function () {
     render(
         <div>
             <h1>Fiscal Calendar Generator</h1>
-            <div className='twelve columns'>
+            <div
+                className='twelve columns'
+                id = "clip"
+                data-clipboard-text = "clip!"
+            >
                 <Provider store={ store }>
                     <InputForm
                         store = { store }
