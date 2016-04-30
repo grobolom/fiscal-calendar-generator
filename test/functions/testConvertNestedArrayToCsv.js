@@ -33,4 +33,14 @@ describe('convertNestedArrayToCsv', function() {
             }).toThrow(/nested arrays are too deep/);
         }
     );
+
+    it('should correctly convert simple nested array to csv', function() {
+        var goodArray = [
+            ['good','good'],
+            ['fine','fine'],
+            ['nice','nice']
+        ];
+        expect(convertNestedArrayToCsv(goodArray))
+            .toEqual("good,good\r\nfine,fine\r\nnice,nice");
+    });
 });
