@@ -17,26 +17,23 @@ export const InputForm = React.createClass({
         var entries = this.props.store.getState().entries;
         var clip = convertNestedArrayToCsv(entries);
         return (
-            <form
-                onSubmit = { this.handleSubmit }
-            >
-                <WeekFormat
-                    store = { this.props.store }
-                />
-                <FiscalYearStart
-                    store = { this.props.store }
-                />
-                <GenerateButton
-                    store = { this.props.store }
-                />
-                <DownloadButton
-                    store = { this.props.store }
-                />
-                <div
-                    id = 'clip'
-                    data-clipboard-text = { clip }
-                />
-            </form>
+            <div className='row'>
+                <form onSubmit = { this.handleSubmit } >
+                    <div className='three columns'>
+                        <WeekFormat store = { this.props.store } />
+                    </div>
+                    <div className='three columns'>
+                        <FiscalYearStart store = { this.props.store } />
+                    </div>
+                    <div className='three columns'>
+                        <GenerateButton store = { this.props.store } />
+                    </div>
+                    <div className='three columns'>
+                        <DownloadButton store = { this.props.store } />
+                    </div>
+                    <div id = 'clip' data-clipboard-text = { clip } />
+                </form>
+            </div>
         );
     }
 });

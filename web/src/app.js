@@ -20,13 +20,13 @@ var store = applyMiddleware(store, [ clipboardMiddleware ]);
 var ren = function () {
     render(
         <div>
-            <h1>Fiscal Calendar Generator</h1>
-            <div className='twelve columns'>
+            <div className='container'>
+                <h1>Fiscal Calendar Generator</h1>
                 <InputForm
                     store = { store }
                 />
             </div>
-            <div className='twelve columns'>
+            <div className='container'>
                 <FiscalDateList
                     entries = { store.getState().entries }
                 />
