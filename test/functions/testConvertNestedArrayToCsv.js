@@ -7,4 +7,30 @@ describe('convertNestedArrayToCsv', function() {
             convertNestedArrayToCsv('bacon');
         }).toThrow(/not an array/);
     });
+
+    it('should throw an error if an inside element is not an array',
+        function() {
+            var badArray = [
+                ['good'],
+                ['good'],
+                'bad'
+            ];
+            expect(function() {
+                convertNestedArrayToCsv(badArray);
+            }).toThrow(/not a nested array/);
+        }
+    );
+
+    it('should throw an error if the nested arrays contain non-strings',
+        function() {
+            var badArray = [
+                ['good'],
+                ['good'],
+                [['awful']]
+            ];
+            expect(function() {
+                convertNestedArrayToCsv(badArray);
+            }).toThrow(/nested arrays are too deep/);
+        }
+    );
 });
