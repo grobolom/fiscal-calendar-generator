@@ -11,7 +11,7 @@ export const DownloadButton = React.createClass({
             <input
                 type='button'
                 className='button primary'
-                value='Download'
+                value='Copy to Clipboard'
                 onClick={ this.handleClick }
             />
         );
