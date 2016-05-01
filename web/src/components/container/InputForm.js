@@ -26,7 +26,9 @@ export const InputForm = React.createClass({
                         <FiscalYearStart store = { this.props.store } />
                     </div>
                     <div className='three columns'>
-                        <GenerateButton store = { this.props.store } />
+                        <GenerateButton
+                            handleSubmit = { this.handleSubmit }
+                        />
                     </div>
                     <div className='three columns'>
                         <DownloadButton store = { this.props.store } />
