@@ -5,11 +5,12 @@ export const FiscalDateList = React.createClass({
     render: function() {
         var entries = this.props.entries
             .filter(function(entry) {
-                return (entry.day == 1 || entry.fiscal_day == 364);
+                return (entry.fiscal_day === 1 || entry.index === 364);
             })
             .map(function(entry) {
             return (
                 <FiscalDateEntry
+                    index = { entry.index }
                     day = { entry.day }
                     month = { entry.month }
                     year = { entry.year }
@@ -18,7 +19,7 @@ export const FiscalDateList = React.createClass({
                     fiscal_week = { entry.fiscal_week }
                     fiscal_month = { entry.fiscal_month }
                     fiscal_year = { entry.fiscal_year }
-                    key = { entry.fiscal_day }
+                    key = { entry.index }
                 />
             );
         }, this);
@@ -26,6 +27,7 @@ export const FiscalDateList = React.createClass({
             <table className='u-full-width'>
                 <thead>
                     <tr>
+                        <th>Index</th>
                         <th>Day</th>
                         <th>Month</th>
                         <th>Year</th>

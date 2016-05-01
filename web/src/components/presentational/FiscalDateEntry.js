@@ -2,6 +2,7 @@ import React from 'react';
 
 export const FiscalDateEntry = React.createClass({
     render: function() {
+        var index = this.props.index;
         var day = this.props.day;
         var month = this.props.month;
         var year = this.props.year;
@@ -12,6 +13,7 @@ export const FiscalDateEntry = React.createClass({
         var fiscal_year = this.props.fiscal_year;
         return (
             <tr>
+                <td>{ index }</td>
                 <td>{ day }</td>
                 <td>{ month }</td>
                 <td>{ year }</td>
