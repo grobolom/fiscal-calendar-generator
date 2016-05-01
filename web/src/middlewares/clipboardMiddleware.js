@@ -12,6 +12,8 @@ var clipboardMiddleware = function(store) {
                 copyEvent.initEvent('click', true, true);
                 clipboard.dispatchEvent(copyEvent);
             }
+
+            return next(action);
         };
     }
 };
