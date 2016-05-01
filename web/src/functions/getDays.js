@@ -22,8 +22,6 @@ export const getDays = function(pattern, date) {
     var data = [];
     var parsed_date = moment(date, 'YYYY-MM-DD');
 
-    console.log(months);
-
     for (var i = 0; i < 364; i++) {
         var currentMonth = 1;
         for (var j = 0; j < 12; j++) {
