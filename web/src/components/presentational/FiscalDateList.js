@@ -5,7 +5,7 @@ export const FiscalDateList = React.createClass({
     render: function() {
         var entries = this.props.entries
             .filter(function(entry) {
-                return (entry.fiscal_day < 10 || entry.fiscal_day > 360);
+                return (entry.day == 1 || entry.fiscal_day == 364);
             })
             .map(function(entry) {
             return (
