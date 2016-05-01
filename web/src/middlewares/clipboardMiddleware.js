@@ -1,29 +1,28 @@
 import Clipboard from 'clipboard';
 import { saveAs } from 'filesaverjs';
+import { convertNestedArrayToCsv } from '../functions/convertNestedArrayToCsv.js';
 
 var clipboardMiddleware = function(store) {
     return function (next) {
         return function (action) {
-
-            try {
-                var isFileSaverSupported = !!new Blob;
-            } catch (e) {
-                console.log(e);
-            }
-
             if (action.type === 'DOWNLOAD') {
                 var clip = new Clipboard('#clip');
-
                 var clipboard = document.getElementById('clip');
-
                 var copyEvent = document.createEvent('Event');
                 copyEvent.initEvent('click', true, true);
+
                 clipboard.dispatchEvent(copyEvent);
             }
 
             if (action.type === 'GENERATE') {
-                var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
-                saveAs(blob, "hello world.txt");
+                var content = [convertNestedArrayToCsv(
+                    store.getState().entries
+                )];
+                console.log(content);
+                var type = {type: "text/csv;charset=utf-8"};
+                var blob = new Blob(content, type);
+
+                saveAs(blob, "fiscal_calendar.csv");
             }
 
             return next(action);
