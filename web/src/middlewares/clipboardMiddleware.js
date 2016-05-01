@@ -15,10 +15,9 @@ var clipboardMiddleware = function(store) {
             }
 
             if (action.type === 'GENERATE') {
-                var content = [convertNestedArrayToCsv(
-                    store.getState().entries
-                )];
-                console.log(content);
+                var content = [
+                    convertNestedArrayToCsv(store.getState().entries)
+                ];
                 var type = {type: "text/csv;charset=utf-8"};
                 var blob = new Blob(content, type);
 
