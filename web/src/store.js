@@ -23,7 +23,6 @@ var createStore = function (reducer, initialState) {
     };
 
     var dispatch = function(action) {
-        console.log(action);
         state = reducer(state, action);
         var listeners = observers;
         for (var i = 0; i < listeners.length; i++) {
