@@ -4,10 +4,10 @@ export const GenerateButton = React.createClass({
     render: function() {
         return (
             <input
-                type='submit'
+                type='button'
                 value='generate'
                 name='generate'
-                className='button-primary'
+                className='button'
                 onClick={ this.props.handleClick }
             />
         );

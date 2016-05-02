@@ -4,9 +4,10 @@ export const generate = function() {
     };
 }
 
-export const download = function() {
+export const download = function(download_type) {
     return {
         type: 'DOWNLOAD',
+        download_type: download_type,
     };
 }
 

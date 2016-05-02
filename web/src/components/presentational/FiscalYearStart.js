@@ -12,6 +12,7 @@ export const FiscalYearStart = React.createClass({
                 name='fiscal-year-start'
                 id='fiscal-year-start'
                 defaultValue='2016-02-01'
+                className='u-full-width'
                 onChange={ this.handleChange }
             />
         );

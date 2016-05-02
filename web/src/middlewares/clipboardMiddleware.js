@@ -5,9 +5,7 @@ import { convertNestedArrayToCsv } from '../functions/convertNestedArrayToCsv.js
 var clipboardMiddleware = function(store) {
     return function (next) {
         return function (action) {
-
-            var state = store.getState();
-            var downloadType = state.downloadType;
+            var downloadType = action.download_type;
 
             if (action.type === 'DOWNLOAD') {
                 switch (downloadType) {

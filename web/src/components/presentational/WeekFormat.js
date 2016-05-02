@@ -11,6 +11,7 @@ export const WeekFormat = React.createClass({
                 type='text'
                 placeholder='445'
                 defaultValue='445'
+                className='u-full-width'
                 onChange={ this.handleChange }
             />
         );

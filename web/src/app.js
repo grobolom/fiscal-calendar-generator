@@ -22,6 +22,8 @@ var ren = function () {
         <div>
             <div className='container'>
                 <h1>Fiscal Calendar Generator</h1>
+            </div>
+            <div className='container'>
                 <InputForm
                     store = { store }
                 />

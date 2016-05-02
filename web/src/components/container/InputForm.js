@@ -17,25 +17,32 @@ export const InputForm = React.createClass({
         var entries = this.props.store.getState().entries;
         var clip = convertNestedArrayToCsv(entries);
         return (
-            <div className='row'>
-                <form onSubmit = { this.handleSubmit } >
-                    <div className='three columns'>
+            <form onSubmit = { this.handleSubmit } >
+                <div className='row'>
+                    <div className='six columns'>
+                        <label>Pattern</label>
                         <WeekFormat store = { this.props.store } />
                     </div>
-                    <div className='three columns'>
+                    <div className='six columns'>
+                        <label>Start Date</label>
                         <FiscalYearStart store = { this.props.store } />
                     </div>
-                    <div className='three columns'>
-                        <GenerateButton
-                            handleSubmit = { this.handleSubmit }
-                        />
-                    </div>
-                    <div className='three columns'>
-                        <DownloadButton store = { this.props.store } />
-                    </div>
-                    <div id = 'clip' data-clipboard-text = { clip } />
-                </form>
-            </div>
+                </div>
+                <div className='row'>
+                    <GenerateButton handleSubmit = { this.handleSubmit } />
+                    <DownloadButton
+                        store = { this.props.store }
+                        text = 'Download as .csv'
+                        dlType = 'csv'
+                    />
+                    <DownloadButton
+                        store = { this.props.store }
+                        text = 'Copy to Clipboard'
+                        dlType = 'clip'
+                    />
+                </div>
+                <div id = 'clip' data-clipboard-text = { clip } />
+            </form>
         );
     }
 });
